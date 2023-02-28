@@ -1,11 +1,11 @@
-About pennylane
-===============
+About pennylane-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pennylane-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/PennyLaneAI/pennylane
 
 Package license: Apache-2.0 AND MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pennylane-feedstock/blob/main/LICENSE.txt)
 
 Summary: PennyLane is a Python quantum machine learning library by Xanadu Inc.
 
@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@BastianZim](https://github.com/BastianZim/)
+* [@vincentmr](https://github.com/vincentmr/)
 
