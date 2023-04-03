@@ -11,8 +11,6 @@ Summary: PennyLane is a Python quantum machine learning library by Xanadu Inc.
 
 Documentation: https://pennylane.readthedocs.io/en/stable/
 
-<!-- add dummy commit to try retriggering CI -->
-
 Current build status
 ====================
 
