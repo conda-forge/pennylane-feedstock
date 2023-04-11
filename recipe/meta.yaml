@@ -13,7 +13,7 @@ source:
   # - url: https://github.com/PennyLaneAI/pennylane-lightning/archive/refs/tags/v{{ version }}.tar.gz
   #   sha256: da9912f0286d1a54051cc19cf8bdbdcd732795636274c95f376db72a88e52d85
   - git_url: https://github.com/PennyLaneAI/pennylane-lightning.git
-    git_tag: 4f319a2e9675ea314a81f3165c5e6eb26aeeba95
+    git_tag: master
     folder: pennylane-lightning
     patches:
       - cross_compilation.diff  # [build_platform != target_platform]
