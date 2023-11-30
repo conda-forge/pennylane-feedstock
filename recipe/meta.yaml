@@ -24,6 +24,7 @@ requirements:
 
 outputs:
   - name: pennylane-core
+    version: {{ version }}
     build:
       number: {{ build_num }}
       skip: true  # [win]
@@ -63,6 +64,7 @@ outputs:
         - setuptools
 
   - name: pennylane-lightning-core
+    version: {{ version }}
     build:
       number: {{ build_num }}
       skip: true  # [win]
@@ -112,6 +114,7 @@ outputs:
         - setuptools
 
   - name: pennylane-lightning-kokkos-core
+    version: {{ version }}
     build:
       number: {{ build_num }}
       skip: true  # [win]
@@ -126,6 +129,7 @@ outputs:
 
     requirements:
       build:
+        - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
