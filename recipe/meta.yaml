@@ -121,7 +121,8 @@ outputs:
         - cd "${SRC_DIR}/pennylane-lightning"
         # - {{ PYTHON }} setup.py build_ext --define="PL_BACKEND=lightning_kokkos"
         # - {{ PYTHON }} setup.py bdist_wheel
-        - CMAKE_ARGS="-DPL_BACKEND=lightning_kokkos" {{ PYTHON }} -m pip install . --no-deps -vv
+        - CMAKE_ARGS="-DPL_BACKEND=lightning_Kokkos" {{ PYTHON }} -m pip install . --no-deps -vv # [not osx or build_platform == target_platform]
+        - CMAKE_ARGS="-DPL_BACKEND=lightning_Kokkos -DCMAKE_CXX_COMPILER_TARGET=arm64-apple-macos11 -DCMAKE_SYSTEM_NAME=Darwin -DCMAKE_SYSTEM_PROCESSOR=ARM64" {{ PYTHON }} -m pip install . --no-deps -vv # [osx and build_platform != target_platform]
 
     requirements:
       build:
@@ -159,7 +160,10 @@ outputs:
       number: {{ build_num }}
       skip: true  # [win]
     requirements:
+      host:
+        - python
       run:
+        - python
         - {{ pin_subpackage('pennylane-core', max_pin="x.x.x") }}
         - {{ pin_subpackage('pennylane-lightning-core', max_pin="x.x.x") }}
         - {{ pin_subpackage('pennylane-lightning-kokkos-core', max_pin="x.x.x") }}
