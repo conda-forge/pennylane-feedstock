@@ -113,10 +113,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_numpy1.22python3.10.____cpython</td>
+              <td>linux_ppc64le_numpy1.22python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14636&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.22python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.22python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -148,17 +148,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_numpy1.26python3.12.____cpython</td>
+              <td>linux_ppc64le_numpy1.26python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14636&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.26python3.12.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_numpy1.26python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.22python3.10.____cpython</td>
+              <td>osx_64_numpy1.22python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14636&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.22python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.22python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -190,17 +190,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.26python3.12.____cpython</td>
+              <td>osx_64_numpy1.26python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14636&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.26python3.12.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.26python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_numpy1.22python3.10.____cpython</td>
+              <td>osx_arm64_numpy1.22python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14636&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.22python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.22python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -225,10 +225,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_numpy1.26python3.12.____cpython</td>
+              <td>osx_arm64_numpy1.26python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14636&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.26python3.12.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pennylane-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.26python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -247,6 +247,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane-green.svg)](https://anaconda.org/conda-forge/pennylane) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane.svg)](https://anaconda.org/conda-forge/pennylane) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane.svg)](https://anaconda.org/conda-forge/pennylane) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane.svg)](https://anaconda.org/conda-forge/pennylane) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane--core-green.svg)](https://anaconda.org/conda-forge/pennylane-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane-core.svg)](https://anaconda.org/conda-forge/pennylane-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane-core.svg)](https://anaconda.org/conda-forge/pennylane-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane-core.svg)](https://anaconda.org/conda-forge/pennylane-core) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane--lightning--core-green.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane-lightning-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane-lightning-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane-lightning-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane--lightning--kokkos--core-green.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane-lightning-kokkos-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane-lightning-kokkos-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane-lightning-kokkos-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) |
 
 Installing pennylane
 ====================
@@ -258,16 +259,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pennylane, pennylane-core, pennylane-lightning-core` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pennylane, pennylane-core, pennylane-lightning-core, pennylane-lightning-kokkos-core` can be installed with `conda`:
 
 ```
-conda install pennylane pennylane-core pennylane-lightning-core
+conda install pennylane pennylane-core pennylane-lightning-core pennylane-lightning-kokkos-core
 ```
 
 or with `mamba`:
 
 ```
-mamba install pennylane pennylane-core pennylane-lightning-core
+mamba install pennylane pennylane-core pennylane-lightning-core pennylane-lightning-kokkos-core
 ```
 
 It is possible to list all of the versions of `pennylane` available on your platform with `conda`:
