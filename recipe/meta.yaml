@@ -59,8 +59,8 @@ outputs:
       imports:
         - pennylane
       requires:
-        - setuptools
         - pip
+        - setuptools
 
   - name: pennylane-lightning-core
     build:
@@ -70,10 +70,10 @@ outputs:
         - {{ pin_subpackage('pennylane-lightning-core', max_pin='x.x.x') }}
       script:
         - cd "${SRC_DIR}/pennylane-lightning"
-        - {{ PYTHON }} setup.py build_ext --define="ENABLE_BLAS=ON;ENABLE_OPENMP=ON"  # [not osx or build_platform == target_platform]
-        - {{ PYTHON }} setup.py build_ext --define="ENABLE_BLAS=ON;ENABLE_OPENMP=ON;CMAKE_CXX_COMPILER_TARGET=arm64-apple-macos11;CMAKE_SYSTEM_NAME=Darwin;CMAKE_SYSTEM_PROCESSOR=ARM64"  # [osx and build_platform != target_platform]
-        - {{ PYTHON }} setup.py bdist_wheel
-        - {{ PYTHON }} -m pip install . --no-deps -vv
+        # - {{ PYTHON }} setup.py build_ext --define="ENABLE_BLAS=ON;ENABLE_OPENMP=ON"  # [not osx or build_platform == target_platform]
+        # - {{ PYTHON }} setup.py build_ext --define="ENABLE_BLAS=ON;ENABLE_OPENMP=ON;CMAKE_CXX_COMPILER_TARGET=arm64-apple-macos11;CMAKE_SYSTEM_NAME=Darwin;CMAKE_SYSTEM_PROCESSOR=ARM64"  # [osx and build_platform != target_platform]
+        # - {{ PYTHON }} setup.py bdist_wheel
+        - SKIP_COMPILATION=True {{ PYTHON }} -m pip install . --no-deps -vv
         # - CMAKE_ARGS="-DPL_BACKEND=lightning_qubit -DENABLE_BLAS=ON -DENABLE_OPENMP=ON" {{ PYTHON }} -m pip install . --no-deps -vv # [not osx or build_platform == target_platform]
         # - CMAKE_ARGS="-DPL_BACKEND=lightning_qubit -DENABLE_BLAS=ON -DENABLE_OPENMP=ON -DCMAKE_CXX_COMPILER_TARGET=arm64-apple-macos11 -DCMAKE_SYSTEM_NAME=Darwin -DCMAKE_SYSTEM_PROCESSOR=ARM64" {{ PYTHON }} -m pip install . --no-deps -vv # [osx and build_platform != target_platform]
 
@@ -106,9 +106,10 @@ outputs:
     test:
       imports:
         - pennylane_lightning
+        - pennylane_lightning.lightning_qubit
       requires:
-        - setuptools
         - pip
+        - setuptools
 
   - name: pennylane-lightning-kokkos-core
     build:
@@ -118,9 +119,9 @@ outputs:
         - {{ pin_subpackage('pennylane-lightning-kokkos-core', max_pin='x.x.x') }}
       script:
         - cd "${SRC_DIR}/pennylane-lightning"
-        - {{ PYTHON }} setup.py build_ext --define="PL_BACKEND=lightning_kokkos"
-        - {{ PYTHON }} setup.py bdist_wheel
-        - {{ PYTHON }} -m pip install . --no-deps -vv
+        # - {{ PYTHON }} setup.py build_ext --define="PL_BACKEND=lightning_kokkos"
+        # - {{ PYTHON }} setup.py bdist_wheel
+        - CMAKE_ARGS="-DPL_BACKEND=lightning_kokkos" {{ PYTHON }} -m pip install . --no-deps -vv
 
     requirements:
       build:
@@ -146,20 +147,19 @@ outputs:
         - pennylane-lightning-kokkos <0.0a0
     test:
       imports:
-        - pennylane_lightning_kokkos
+        - pennylane_lightning
+        - pennylane_lightning.lightning_kokkos
       requires:
-        - setuptools
         - pip
+        - setuptools
 
   - name: pennylane
+    version: {{ version }}
     build:
       number: {{ build_num }}
       skip: true  # [win]
     requirements:
-      host:
-        - python
       run:
-        - python
         - {{ pin_subpackage('pennylane-core', max_pin="x.x.x") }}
         - {{ pin_subpackage('pennylane-lightning-core', max_pin="x.x.x") }}
         - {{ pin_subpackage('pennylane-lightning-kokkos-core', max_pin="x.x.x") }}
@@ -167,6 +167,8 @@ outputs:
       imports:
         - pennylane
         - pennylane_lightning
+        - pennylane_lightning.lightning_qubit
+        - pennylane_lightning.lightning_kokkos
       commands:
         - pypy --version 2> /dev/null || echo Using Python to run tests
         - pypy -c "import pennylane as qml; qml.about()" 2> /dev/null || echo PyPy not found
@@ -178,11 +180,11 @@ outputs:
         - pl-device-test --device lightning.kokkos --shots None --skip-ops
         - pl-device-test --device lightning.kokkos --shots 10000 --skip-ops
       requires:
-        - setuptools
         - flaky
         - pip
         - pytest
         - pytest-mock
+        - setuptools
 
 about:
   home: https://github.com/PennyLaneAI/pennylane
