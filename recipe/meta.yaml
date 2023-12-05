@@ -187,9 +187,9 @@ outputs:
         - pip check
         - pl-device-test --help
         - pl-device-test --device lightning.qubit --shots None --skip-ops
-        - pl-device-test --device lightning.qubit --shots 10000 --skip-ops
+        - pl-device-test --device lightning.qubit --shots 200000 --skip-ops
         - pl-device-test --device lightning.kokkos --shots None --skip-ops
-        - pl-device-test --device lightning.kokkos --shots 10000 --skip-ops
+        - pl-device-test --device lightning.kokkos --shots 200000 --skip-ops
       requires:
         - flaky
         - pip
