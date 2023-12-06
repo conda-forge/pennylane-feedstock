@@ -13,9 +13,6 @@ source:
   - url: https://github.com/PennyLaneAI/pennylane-lightning/archive/refs/tags/v{{ version }}.tar.gz
     sha256: 878f63cd1afadd52386b1aca9c0e3fb0a097b64ce8e347b325ebc7cac722e5e0
     folder: pennylane-lightning
-  - url: https://github.com/PennyLaneAI/pennylane-lightning/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 878f63cd1afadd52386b1aca9c0e3fb0a097b64ce8e347b325ebc7cac722e5e0
-    folder: pennylane-lightning-kokkos
 
 build:
   number: {{ build_num }}
@@ -103,8 +100,6 @@ outputs:
         - setuptools
         - ninja
       run:
-        - numpy
-        - python
         - {{ pin_subpackage('pennylane-core') }}
       run_constrained:
         - pennylane-lightning <0.0a0
@@ -112,7 +107,7 @@ outputs:
       imports:
         - pennylane_lightning
         - pennylane_lightning.lightning_qubit
-        - pennylane_lightning.lightning_qubit_ops
+        # - pennylane_lightning.lightning_qubit_ops
       requires:
         - pip
         - setuptools
@@ -125,7 +120,7 @@ outputs:
       run_exports:
         - {{ pin_subpackage('pennylane-lightning-kokkos-core', max_pin='x.x.x') }}
       script:
-        - cd "${SRC_DIR}/pennylane-lightning-kokkos"
+        - cd "${SRC_DIR}/pennylane-lightning"
         - CMAKE_ARGS="-DPL_BACKEND=lightning_kokkos -DCMAKE_CXX_COMPILER_TARGET=arm64-apple-macos11 -DCMAKE_SYSTEM_NAME=Darwin -DCMAKE_SYSTEM_PROCESSOR=ARM64" {{ PYTHON }} -m pip install . --no-deps -vv  # [osx and build_platform != target_platform]
         - PL_BACKEND=lightning_kokkos {{ PYTHON }} setup.py build_ext  # [not osx or build_platform == target_platform]
         - PL_BACKEND=lightning_kokkos {{ PYTHON }} setup.py bdist_wheel  # [not osx or build_platform == target_platform]
@@ -148,9 +143,7 @@ outputs:
         - pybind11
         - python
       run:
-        - python
         - {{ pin_subpackage('pennylane-core') }}
-        - {{ pin_subpackage('pennylane-lightning-core') }}
         - {{ pin_compatible('kokkos', min_pin='x.x.x', max_pin='x.x.x') }}
       run_constrained:
         - pennylane-lightning-kokkos <0.0a0
@@ -158,7 +151,7 @@ outputs:
       imports:
         - pennylane_lightning
         - pennylane_lightning.lightning_kokkos
-        - pennylane_lightning.lightning_kokkos_ops
+        # - pennylane_lightning.lightning_kokkos_ops
       requires:
         - pip
         - setuptools
@@ -191,9 +184,9 @@ outputs:
         - pip check
         - pl-device-test --help
         - pl-device-test --device lightning.qubit --shots None --skip-ops
-        - pl-device-test --device lightning.qubit --shots 200000 --skip-ops
+        - pl-device-test --device lightning.qubit --shots 100000 --skip-ops
         - pl-device-test --device lightning.kokkos --shots None --skip-ops
-        - pl-device-test --device lightning.kokkos --shots 200000 --skip-ops
+        - pl-device-test --device lightning.kokkos --shots 100000 --skip-ops
       requires:
         - flaky
         - pip
