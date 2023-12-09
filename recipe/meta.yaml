@@ -89,8 +89,9 @@ outputs:
         - pybind11                               # [build_platform != target_platform]
         # Needed for Windows
         - cmake
-        - ninja
         - make
+        - ninja
+        - setuptools  # [win]
       host:
         - libcblas              # [not win]
         - libgomp               # [linux]
