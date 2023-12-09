@@ -32,7 +32,9 @@ outputs:
       entry_points:
         - pl-device-test=pennylane.devices.tests:cli
       script: 
-        - cd "${SRC_DIR}/pennylane" 
+        - chdir %SRC_DIR%\pennylane-lightning  # [win]
+        - dir  # [win]
+        - cd "${SRC_DIR}/pennylane"  # [not win]
         - {{ PYTHON }} -m pip install . --no-deps -vv
     requirements:
       build:
