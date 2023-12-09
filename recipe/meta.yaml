@@ -70,8 +70,10 @@ outputs:
       run_exports:
         - {{ pin_subpackage('pennylane-lightning-core', max_pin='x.x.x') }}
       script:
-        - cd "${SRC_DIR}/pennylane-lightning"
+        - chdir %SRC_DIR%\pennylane-lightning  # [win]
+        - dir  # [win]
         - CMAKE_ARGS="-DENABLE_BLAS=OFF -DENABLE_OPENMP=OFF" {{ PYTHON }} -m pip install . --no-deps -vv  # [win]
+        - cd "${SRC_DIR}/pennylane-lightning"  # [not win]
         - CMAKE_ARGS="-DENABLE_BLAS=ON -DENABLE_OPENMP=ON -DCMAKE_CXX_COMPILER_TARGET=arm64-apple-macos11 -DCMAKE_SYSTEM_NAME=Darwin -DCMAKE_SYSTEM_PROCESSOR=ARM64" {{ PYTHON }} -m pip install . --no-deps -vv  # [osx and build_platform != target_platform]
         - {{ PYTHON }} setup.py build_ext --define="ENABLE_BLAS=ON;ENABLE_OPENMP=ON"  # [linux or build_platform == target_platform]
         - {{ PYTHON }} setup.py bdist_wheel  # [linux or build_platform == target_platform]
