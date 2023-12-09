@@ -247,6 +247,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane-green.svg)](https://anaconda.org/conda-forge/pennylane) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane.svg)](https://anaconda.org/conda-forge/pennylane) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane.svg)](https://anaconda.org/conda-forge/pennylane) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane.svg)](https://anaconda.org/conda-forge/pennylane) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane--core-green.svg)](https://anaconda.org/conda-forge/pennylane-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane-core.svg)](https://anaconda.org/conda-forge/pennylane-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane-core.svg)](https://anaconda.org/conda-forge/pennylane-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane-core.svg)](https://anaconda.org/conda-forge/pennylane-core) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane--lightning--core-green.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane-lightning-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane-lightning-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane-lightning-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pennylane--lightning--kokkos--core-green.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pennylane-lightning-kokkos-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pennylane-lightning-kokkos-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pennylane-lightning-kokkos-core.svg)](https://anaconda.org/conda-forge/pennylane-lightning-kokkos-core) |
 
 Installing pennylane
 ====================
@@ -258,16 +259,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pennylane, pennylane-core, pennylane-lightning-core` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pennylane, pennylane-core, pennylane-lightning-core, pennylane-lightning-kokkos-core` can be installed with `conda`:
 
 ```
-conda install pennylane pennylane-core pennylane-lightning-core
+conda install pennylane pennylane-core pennylane-lightning-core pennylane-lightning-kokkos-core
 ```
 
 or with `mamba`:
 
 ```
-mamba install pennylane pennylane-core pennylane-lightning-core
+mamba install pennylane pennylane-core pennylane-lightning-core pennylane-lightning-kokkos-core
 ```
 
 It is possible to list all of the versions of `pennylane` available on your platform with `conda`:
