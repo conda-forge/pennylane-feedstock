@@ -1,5 +1,5 @@
 {% set name = "pennylane" %}
-{% set version = "0.37.0" %}
+{% set version = "0.41.0" %}
 {% set build_num = 0 %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   - url: https://github.com/PennyLaneAI/pennylane/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 3e5eaab9da28ac43099e5850fde0c5763bc4e37271804463fc35dab8b08e2f15
+    sha256: 7ece2765859203684b8b713a1d49c4e6d7e47da876e19f72a6f105201e6c20b8
     folder: pennylane
   - url: https://github.com/PennyLaneAI/pennylane-lightning/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 3f70e3e3b7e4d0f6a679919c0c83e451e129666b021bb529dd02eb915d0666a0
+    sha256: 413be96fc76b75ba55bbaf9bfd04b06a29e776e60ac653b6a1acaebb9364eecc
     folder: pennylane-lightning
 
 build:
